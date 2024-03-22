@@ -6,7 +6,7 @@ on:
     branches: [main]
 jobs:
   publish:
-    runs_on: ubuntu_latest
+    runs-on: ubuntu_latest
     permissions:
       contents: read
       packages: write
@@ -21,6 +21,6 @@ jobs:
           echo @benjaminalcala:https://npm.pkg.github.com/ > build/.npmrc
           echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
       - run: npm publish
-        working_directory: ./build
+        working-directory: ./build
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
