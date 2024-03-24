@@ -1,4 +1,5 @@
 import winston, { Logger } from 'winston';
+
 import {
   ElasticsearchTransport,
   ElasticsearchTransformer,
@@ -31,6 +32,10 @@ export function winstonLogger(
         maxRetries: 2,
         requestTimeout: 10000,
         sniffOnStart: false,
+        auth: {
+          username: 'elastic',
+          password: 'admin1234',
+        },
       },
     },
   };
